@@ -44,41 +44,36 @@ Logic gates are the basic building blocks of any digital system. It is an electr
 
 ## PROGRAM:
 
-void setup() { </br>
-pinMode(13, OUTPUT);</br>
-Serial.begin(9600);</br>
-}</br>
-void loop() {</br>
-if (Serial.available() > 0) {</br>
-int state = Serial.read();</br>
-if (state == '5') {</br>
-digitalWrite(13, HIGH);</br>
-Serial.println("LED ON");</br>
-}</br>
-if (state == '8' ) {</br>
-digitalWrite(13, LOW);</br>
-Serial.println("LED OFF");</br>
-}</br>
-}</br>
-delay(50);</br>
-}</br>
+int bs0 = 0;</br>
+int bs5 = 0;</br>
 void setup() {</br>
-Serial.begin(9600);</br>
+pinMode(13, OUTPUT);</br>
+pinMode(0, INPUT);</br>
+pinMode(5, INPUT);</br>
 }</br>
 void loop() {</br>
-Serial.print('H');</br>
-delay(1000);</br></br>
-Serial.print('L');</br>
-delay(1000);</br>
-}</br>
 
+bs0 = digitalRead(0);</br>
+bs5 = digitalRead(5);</br>
+
+if (bs0&bs5)</br>
+{</br>
+digitalWrite(13, HIGH);</br>
+}</br>
+else</br>
+{</br>
+
+digitalWrite(13, LOW);</br>
+}</br>
+}</br>
 ## CIRCUIT DIAGRAM:
 
 ![image](https://user-images.githubusercontent.com/132209885/236762155-e99b433f-6e89-40f3-b447-a32441140585.png)
 
 ## OUTPUT:
 
-![image](https://user-images.githubusercontent.com/132209885/236762137-bb83f668-9864-49b8-817a-974c5f83a471.png)
+![image](https://github.com/Poovaitamil/Logical-operation/assets/132209885/9a1426a7-2773-45c1-8ce1-7b0edf082ead)
+
 
 ## RESULT:
 
